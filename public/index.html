@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Guessing Game (Solo Start)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-screen" class="screen active">
+        <h1>Guessing Game</h1>
+        <div class="form-group">
+            <label for="nickname-input">Enter Nickname:</label>
+            <input type="text" id="nickname-input" maxlength="20">
+        </div>
+        <div class="form-group">
+            <label for="session-id-input">Session ID (optional):</label>
+            <input type="text" id="session-id-input" placeholder="Leave blank to create">
+        </div>
+        <button id="join-create-btn">Join / Create Game</button>
+        <p id="login-error" class="error-message"></p>
+    </div>
+
+    <div id="game-screen" class="screen">
+        <div id="session-header">
+            <span>Session: <strong id="session-id-display">N/A</strong></span> |
+            <span>Me: <strong id="my-nickname-display"></strong><span id="gm-indicator"> (GM)</span></span>
+            <button id="leave-btn">Leave</button>
+        </div>
+
+        <div id="player-list-area">
+            <h4>Players (<span id="player-count">0</span>)</h4>
+            <ul id="players-ul">
+            </ul>
+        </div>
+
+        <div id="game-status-area">
+            <p id="status-message">Connecting...</p>
+
+            <div id="gm-controls" class="hidden">
+                <p><strong>Set the question & answer to start.</strong></p>
+                <div class="form-group">
+                    <label for="question-input">Question:</label>
+                    <input type="text" id="question-input">
+                </div>
+                <div class="form-group">
+                    <label for="answer-input">Answer:</label>
+                    <input type="text" id="answer-input">
+                </div>
+                <button id="set-qa-btn">Set Question & Answer</button>
+                <button id="start-game-btn" disabled title="Set Question & Answer first">Start Game</button>
+                <p id="gm-error" class="error-message"></p>
+            </div>
+
+            <div id="question-display" class="hidden">
+                <p><strong>Question:</strong> <span id="question-text">?</span></p>
+                <p>Time: <span id="timer-display">60</span>s | Attempts Left: <span id="attempts-left">3</span></p>
+            </div>
+
+            <div id="guess-input-area" class="hidden">
+                <div class="form-group">
+                    <label for="guess-input">Your Guess:</label>
+                    <input type="text" id="guess-input">
+                    <button id="submit-guess-btn">Submit</button>
+                </div>
+                <p id="guess-feedback" class="feedback-message"></p>
+            </div>
+
+             <div id="round-over-info" class="hidden">
+                <h4 id="round-over-title">Round Over!</h4>
+                <p id="round-over-result"></p>
+                <p>The answer was: <strong id="correct-answer-display"></strong></p>
+                <p id="next-gm-info"></p>
+            </div>
+        </div>
+
+    </div> 
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

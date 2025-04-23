@@ -1,0 +1,73 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 15px;
+    background-color: #f0f2f5;
+    color: #333;
+    font-size: 14px;
+}
+
+.screen {
+    display: none;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    max-width: 500px; /* Can be slightly narrower now */
+    margin: 20px auto;
+}
+
+.screen.active {
+    display: block;
+}
+
+#login-screen {
+    max-width: 350px;
+    text-align: center;
+}
+
+h1 { font-size: 1.8em; color: #444; margin-bottom: 20px; }
+h4 { margin-top: 0; margin-bottom: 8px; color: #555; font-size: 1.1em; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+
+.form-group { margin-bottom: 12px; text-align: left; }
+.form-group label { display: block; margin-bottom: 4px; font-weight: bold; font-size: 0.95em; }
+input[type="text"] { width: calc(100% - 20px); padding: 8px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1em; }
+
+#guess-input-area .form-group { display: flex; align-items: center; }
+#guess-input-area label { margin-right: 8px; margin-bottom: 0; }
+#guess-input-area input[type="text"] { flex-grow: 1; margin-right: 8px; }
+
+button { padding: 8px 14px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; margin: 5px 5px 5px 0; font-size: 0.95em; transition: background-color 0.2s ease; vertical-align: middle; }
+button:hover { background-color: #0056b3; }
+button:disabled { background-color: #cccccc; cursor: not-allowed; }
+
+#leave-btn { background-color: #dc3545; float: right; margin-top: -2px; }
+#leave-btn:hover { background-color: #c82333; }
+
+.error-message { color: #dc3545; font-size: 0.9em; margin-top: 8px; min-height: 1.1em; }
+.feedback-message { font-size: 0.9em; margin-top: 5px; min-height: 1.1em; display: inline-block; margin-left: 10px; }
+
+/* --- Game Screen Layout --- */
+#session-header { padding-bottom: 10px; margin-bottom: 15px; border-bottom: 1px solid #eee; font-size: 0.9em; color: #666; }
+#session-header span { margin-right: 10px; }
+#session-header strong { color: #333; }
+#gm-indicator { font-weight: bold; color: #28a745; display: none; }
+#gm-indicator.visible { display: inline; }
+
+#player-list-area { margin-bottom: 20px; }
+#players-ul { list-style: none; padding: 0; margin: 0; }
+#players-ul li { padding: 4px 0; font-size: 0.95em; color: #555; }
+#players-ul li.is-gm { font-weight: bold; color: #28a745; }
+
+#game-status-area { background-color: #f8f9fa; padding: 15px; border: 1px solid #e9ecef; border-radius: 4px; margin-bottom: 20px; min-height: 100px; }
+#game-status-area p, #game-status-area h4 { margin-top: 5px; margin-bottom: 10px; }
+#game-status-area strong { color: #0056b3; }
+#correct-answer-display { background-color: #e2e3e5; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+#status-message { /* Style for the general status/waiting message */
+    font-style: italic;
+    color: #666;
+}
+
+.hidden { display: none !important; }
+
+/* REMOVED CHAT LOG STYLES */
